@@ -1,6 +1,6 @@
 # LinkWay 官方网站
 
-[English](README) | 简体中文
+[English](./README) | 简体中文
 
 这是 LinkWay 的官方网站和落地页 - 一个为内容创作者和电商从业者打造的专业导航站构建平台。
 
