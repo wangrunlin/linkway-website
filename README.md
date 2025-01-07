@@ -1,6 +1,6 @@
 # LinkWay Official Website
 
-English | [简体中文](./README-zh)
+English | [简体中文](README-zh.md)
 
 This is the official website and landing page for LinkWay - a professional navigation site builder platform designed for content creators and e-commerce professionals.
 
