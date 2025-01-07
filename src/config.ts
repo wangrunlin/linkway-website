@@ -8,7 +8,7 @@ export const description =
   "Link Way 是一款专为内容创作者和电商从业者打造的导航站构建平台。基于先进的多维表格数据库，让用户能够轻松搭建专业的导航网站和独立站点，并通过强大的 SEO 优化获取持续稳定的流量。";
 
 // Last baseURL
-const defaultBaseURL = "https://linkway.alin.run";
+const defaultBaseURL = "https://linkway.site";
 
 // Vercel baseURL, make sure it's a valid URL
 const VERCEL_URL =

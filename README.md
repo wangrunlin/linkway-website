@@ -1,47 +1,64 @@
-# Link Way Landing Page
+# LinkWay Official Website
 
-Link Way 是一款专为内容创作者和电商从业者打造的导航站构建平台。基于先进的多维表格数据库，让用户能够轻松搭建专业的导航网站和独立站点，并通过强大的 SEO 优化获取持续稳定的流量。
+English | [简体中文](README-zh)
 
-## 核心特点
+This is the official website and landing page for LinkWay - a professional navigation site builder platform designed for content creators and e-commerce professionals.
 
-- **快速建站**:
+## About LinkWay
 
-  - 一键创建专业导航站点
-  - 基于多维表格的便捷管理后台
-  - 灵活的数据组织与分类
-  - 个性化站点定制
+LinkWay is a powerful platform that enables users to:
 
-- **搜索增强**:
+- Build professional navigation websites and standalone sites
+- Leverage advanced multi-dimensional database capabilities
+- Optimize for search engines to gain sustainable organic traffic
+- Manage content efficiently through an intuitive interface
 
-  - 站内内容全文检索
-  - 智能搜索推荐
-  - 搜索历史分析
-  - 热门关键词提示
+## Quick Links
 
-- **流量获取**:
+- 🌐 [Production Website](https://linkway.site)
+- 💻 [Source Code Repository](https://github.com/wangrunlin/linkway)
 
-  - SEO 友好的技术架构
-  - 热门关键词排名优化
-  - 搜索引擎收录加速
-  - 流量数据实时监控
+## Development
 
-- **简单管理**:
-  - 多维表格数据管理
-  - 拖拽式内容编排
-  - 批量数据导入导出
-  - 便捷的数据更新
+### Prerequisites
 
-## 适用场景
+- Node.js 20+
+- pnpm
 
-- 内容创作者：构建个人资源导航，沉淀优质内容，获取稳定流量
-- 电商卖家：打造垂直领域导航，积累目标用户，提升转化效果
-- 独立站长：快速搭建专业导航站，通过 SEO 获取持续流量
-- 知识管理：整理和分享行业资源，建立个人品牌影响力
+### Getting Started
 
-## 项目地址
+1. Clone the repository
 
-[Link Way](https://linkway.alin.run)
+   ```bash
+   git clone https://github.com/wangrunlin/linkway-website
+   cd linkway-website
+   ```
 
-## 项目源码
+2. Install dependencies
 
-[Link Way 源码](https://github.com/wangrunlin/linkway)
+   ```bash
+   pnpm install
+   ```
+
+3. Copy the environment variables file and configure it
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+4. Start the development server
+
+   ```bash
+   pnpm dev
+   ```
+
+## Tech Stack
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
