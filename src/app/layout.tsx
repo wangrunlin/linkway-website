@@ -39,9 +39,19 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon?<generated>",
-    shortcut: "/icon?<generated>",
-    apple: "/icon?<generated>",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192" },
+      { url: "/icon-512.png", sizes: "512x512" },
+    ],
+    apple: {
+      url: "/apple-touch-icon.png",
+    },
+    shortcut: {
+      url: "/icon-192.png",
+      sizes: "192x192",
+      type: "image/png",
+    },
   },
   alternates: {
     canonical: baseURL,
@@ -87,7 +97,9 @@ export default function RootLayout({
           </div>
 
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+            <GoogleAnalytics
+              gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+            />
           )}
         </ThemeProvider>
       </body>
