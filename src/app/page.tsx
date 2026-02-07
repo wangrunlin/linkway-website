@@ -88,6 +88,32 @@ const USE_CASES = [
   { title: "知识管理", description: "整理分享行业资源，建立品牌影响力" },
 ] as const;
 
+const HOW_IT_WORKS = [
+  { step: "01", title: "克隆项目", description: "从 GitHub 克隆 Link Way 项目到本地" },
+  { step: "02", title: "配置数据源", description: "连接飞书多维表格或其他数据源" },
+  { step: "03", title: "自定义样式", description: "根据需求调整主题和布局" },
+  { step: "04", title: "一键部署", description: "部署到 Vercel 或其他平台" },
+] as const;
+
+const FAQ = [
+  { 
+    q: "Link Way 是免费的吗？", 
+    a: "是的，Link Way 完全开源免费，采用 MIT 协议，你可以自由使用、修改和分发。" 
+  },
+  { 
+    q: "需要什么技术基础？", 
+    a: "基本的前端知识即可。如果你熟悉 Next.js 和 React，可以更深度地定制。" 
+  },
+  { 
+    q: "支持哪些数据源？", 
+    a: "目前支持飞书多维表格，未来会支持 Notion、Airtable 等更多数据源。" 
+  },
+  { 
+    q: "如何部署？", 
+    a: "推荐使用 Vercel 一键部署，也支持 Cloudflare Pages、Netlify 等平台。" 
+  },
+] as const;
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
@@ -222,6 +248,54 @@ export default function Home() {
                 <p className="text-sm text-slate-500 leading-relaxed">
                   {useCase.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section className="py-24">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">如何使用</h2>
+            <p className="text-slate-400 max-w-xl mx-auto">
+              四步快速搭建你的专业导航站
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {HOW_IT_WORKS.map((item, index) => (
+              <div key={item.step} className="relative">
+                {/* Connector line */}
+                {index < HOW_IT_WORKS.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-white/20 to-transparent" />
+                )}
+                <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                  <div className="text-4xl font-bold text-white/10 mb-4">{item.step}</div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-500">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-24">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">常见问题</h2>
+            <p className="text-slate-400 max-w-xl mx-auto">
+              关于 Link Way 的一些常见问题解答
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {FAQ.map((item, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]"
+              >
+                <h3 className="text-lg font-semibold text-white mb-3">{item.q}</h3>
+                <p className="text-slate-400 leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
