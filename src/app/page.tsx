@@ -74,56 +74,38 @@ const SHOWCASES = [
     description: "汇集优质开发资源，助力程序员提升效率",
     image:
       "https://placehold.co/600x400/2563eb/ffffff?text=Developer+Navigation",
-    url: "#",
+    url: "https://github.com/wangrunlin/linkway",
     stats: { visits: "10K+", links: "500+" },
   },
   {
     title: "设计师资源库",
     description: "精选设计工具与灵感，激发创意灵感",
     image: "https://placehold.co/600x400/9333ea/ffffff?text=Design+Resources",
-    url: "#",
+    url: "https://github.com/wangrunlin/linkway",
     stats: { visits: "8K+", links: "300+" },
   },
   {
     title: "数字营销导航",
     description: "整合营销工具与资源，助力业务增长",
     image: "https://placehold.co/600x400/dc2626/ffffff?text=Marketing+Tools",
-    url: "#",
+    url: "https://github.com/wangrunlin/linkway",
     stats: { visits: "15K+", links: "400+" },
   },
 ] as const;
 
-const TESTIMONIALS = [
-  {
-    quote: "Link Way 帮助我快速搭建了专业的导航站点，SEO效果显著提升。",
-    author: "张明",
-    role: "独立站长",
-    avatar: "https://ui-avatars.com/api/?name=张明&background=0D8ABC&color=fff",
-  },
-  {
-    quote: "直观的管理界面，强大的搜索功能，是管理资源的得力助手。",
-    author: "李华",
-    role: "内容创作者",
-    avatar: "https://ui-avatars.com/api/?name=李华&background=2A9D8F&color=fff",
-  },
-  {
-    quote: "数据分析功能帮助我更好地了解用户需求，持续优化内容。",
-    author: "王芳",
-    role: "电商卖家",
-    avatar: "https://ui-avatars.com/api/?name=王芳&background=E9C46A&color=fff",
-  },
-] as const;
+// 暂时隐藏虚假用户反馈，等有真实用户再启用
+// const TESTIMONIALS = [...];
 
 const HERO_BUTTONS = [
   {
     text: "开始使用 Link Way",
-    href: "#",
+    href: "https://github.com/wangrunlin/linkway",
     variant: "primary",
     icon: "🚀",
   },
   {
     text: "查看演示",
-    href: "https://demo.linkway.site",
+    href: "https://github.com/wangrunlin/linkway#demo",
     variant: "secondary",
     icon: (
       <svg
@@ -153,7 +135,7 @@ const HERO_BUTTONS = [
 const CTA_BUTTONS = [
   {
     text: "开始使用",
-    href: "#",
+    href: "https://github.com/wangrunlin/linkway#quick-start",
     variant: "light",
   },
   {
@@ -310,43 +292,6 @@ export default function Home() {
                     </div>
                   </div>
                 </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Testimonials Section for Social Proof */}
-        <section className="mb-24">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-            用户反馈
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((testimonial) => (
-              <div
-                key={testimonial.author}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="relative w-12 h-12 mr-4">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.author}
-                      className="rounded-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 dark:text-white">
-                      {testimonial.author}
-                    </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 italic">
-                  &quot;{testimonial.quote}&quot;
-                </p>
               </div>
             ))}
           </div>

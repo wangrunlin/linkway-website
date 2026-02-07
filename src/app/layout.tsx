@@ -1,11 +1,33 @@
 import "@/app/globals.css";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { baseURL, description, siteName, title } from "@/config";
 import { ThemeProvider } from "@/components/theme-provider";
+
+// JSON-LD 结构化数据
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: siteName,
+  description,
+  url: baseURL,
+  applicationCategory: "WebApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "CNY",
+  },
+  author: {
+    "@type": "Person",
+    name: "Leo Wang",
+    url: "https://alin.run",
+  },
+};
 
 export const metadata: Metadata = {
   title: {
@@ -71,6 +93,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
   },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/api/og"],
+    creator: "@AlinWRL",
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
@@ -83,6 +112,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        {/* JSON-LD 结构化数据 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* Plausible Analytics */}
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+          <Script
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+            src={process.env.NEXT_PUBLIC_PLAUSIBLE_SRC || "https://plausible.io/js/script.js"}
+          />
+        )}
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"
