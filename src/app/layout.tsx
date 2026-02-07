@@ -6,7 +6,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { baseURL, description, siteName, title } from "@/config";
-import { ThemeProvider } from "@/components/theme-provider";
 
 // JSON-LD 结构化数据
 const jsonLd = {
@@ -111,7 +110,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" suppressHydrationWarning>
+    <html lang="zh-CN" className="dark">
       <head>
         {/* JSON-LD 结构化数据 */}
         <script
@@ -127,25 +126,18 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1 w-full pt-16">{children}</main>
-            <Footer />
-          </div>
+      <body className="min-h-screen bg-slate-950 font-sans antialiased">
+        <div className="relative flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1 w-full pt-20">{children}</main>
+          <Footer />
+        </div>
 
-          {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
-            <GoogleAnalytics
-              gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
-            />
-          )}
-        </ThemeProvider>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+          <GoogleAnalytics
+            gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+          />
+        )}
       </body>
     </html>
   );
