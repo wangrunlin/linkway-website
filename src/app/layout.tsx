@@ -118,11 +118,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* Plausible Analytics */}
-        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+        {process.env.NODE_ENV === "production" && (
           <Script
             defer
-            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-            src={process.env.NEXT_PUBLIC_PLAUSIBLE_SRC || "https://plausible.io/js/script.js"}
+            strategy="afterInteractive"
+            data-domain="linkway.site"
+            src="https://stats.alin.run/js/script.js"
           />
         )}
       </head>
